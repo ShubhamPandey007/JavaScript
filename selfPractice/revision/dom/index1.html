@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red-color {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <mav class="component">
+        <h2 id="username">Welcome to my website</h2>
+        <p class="user">Hey There, this is shubham pandey and here practice the dom maniputaion, how to work on it and how to use them because with the help of dom we can easly change or delete and update the html code</p>
+
+    </mav>
+
+    <p class="user">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, placeat!</p>
+
+    <section class="block">
+        <div class="innercase">
+       <p class="red-color">this is code for you</p>
+       <div class="user">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum mollitia expedita debitis.</div>
+        </div>
+    </section>
+
+    <div class="user">
+        <p class="user-item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta totam nam sint. Error.</p>
+    </div>
+
+    <script>
+       const el = document.getElementById("username");
+    //    console.log(el.innerText);
+    el.innerText = "Hey how ar you" //change the text in html
+    el.classList.add("red-color", "underline")
+    // el.classList.remove("red-color");  
+
+    el.style.textDecoration = "underline"
+    el.parentElement.style.backgroundColor = "green";
+
+
+    //class selectors
+
+     const user = document.getElementsByClassName("user");
+     for ( let i = 0; i < user.length; i++) {
+        // console.log(user.item(i));
+        user.item(i).style.backgroundColor = "green";
+     }
+
+     // how to remove the class element from the html container.
+
+     const element = document.querySelector(".user-item")
+     element.remove();
+
+
+    
+    </script>
+</body>
+</html>
