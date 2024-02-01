@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="block">
+        <p class="paragraph">Welcome to my Website</p>
+
+    </nav>
+    <div class="block">
+        <!-- <h4 onclick="alert ('Hey how are your')">Hey There, My name is <span id="usernamee">Shubham Pandey</span></h4> -->
+
+        <h4 id="name-block">Hey There, My name is <span id="usernamee">Shubham Pandey</span></h4>
+        <p class="user">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, impedit reiciendis sequi fuga mollitia unde eius ea odit, aut, nemo necessitatibus dicta excepturi hic?</p>
+        <p class="event">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos doloribus natus eum.</p>
+    </div>
+
+    <p>first method to click the button direct write code inlne </p>
+    <!-- <button onclick="console.log('Hey I am Clicked')"> Okay</button> -->
+
+    <p>second mthod to use function by clicked the button</p>
+    <button onclick="handleButtonClick()">Click Me</button>   <!--ham yah pe button ke function ko call karenge,  -->
+
+    <p>third method to clicked the button by give id and make them clickable by help of dom</p>
+
+    <button id="clickButton">Click Me by dom</button>
+
+    <p>fouth way is most usefull to make button clikable</p>
+    <button id="clickEvent">Click addEvent</button>
+
+    <p>one more way to click the button </p>
+    <button id="clickBtn">click by function</button>
+
+
+
+    <script>
+        //when we have performed any kind of task that requires to click on them and go to next step, these work are called event listeners. just like => page load, page close, click button, 
+
+        //click event
+
+
+        //agar hame button pe click even perform karna hai to use function ke andar likh ke button me call kar denge.
+        function handleButtonClick() {    
+            console.log("This is button is clicked");
+            alert("Hey I am clicked");
+        }
+
+        // By the help of dom we can get the button id and make it clickable. pahle ham id ko ek variable ke andar sotore kar lenge, phir us variable pe onclick event ka ke ek function call kar ke console log karenge.
+
+
+        const clickable = document.getElementById("clickButton");
+        clickable.onclick = function () {
+            console.log("This is button is clicked");
+            alert("Hey I am clicked");
+        }
+
+    </script>
+
+    <script>
+
+        // This method is most preferred to use the make button clickable.
+        const clickEvent = document.getElementById("clickEvent");
+
+        // clickEvent.addEventListener("click", () => {
+        //     console.log("This is button is clicked");
+        //     alert("Hey I am clicked");
+        // }) 
+
+        const nameBlock = document.getElementById("name-block");
+        clickEvent.addEventListener("click", () => {
+            // nameBlock.style.color = "red"
+            if (nameBlock.style.color === "red"){
+                nameBlock.style.color = "blue";
+            }else {
+                nameBlock.style.color = "red";
+            }
+
+        })
+
+        // clickEvent.addEventListener("click", function() {  
+        //     console.log("This is button is clicked");
+        //     alert("Hey I am clicked");
+        // })      //with the normal fun make it clickable.
+    </script>
+
+    <script>
+        const clickBtn = document.getElementById("clickBtn");
+
+        function doSomething() {
+            console.log("This is button is clicked");
+            alert("This button is clicked")
+        }
+
+        clickBtn.addEventListener("click", doSomething);
+
+        </script>
+
+        <script>
+            // remove the items from the body element
+            const allChildren = document.querySelector("body").children
+            for (let i = 0; i < allChildren.length; i++) {
+                allChildren.item(i).addEventListener("click", () =>{
+                    allChildren.item(i).remove();
+                })
+            }
+
+        </script>
+</body>
+</html>
