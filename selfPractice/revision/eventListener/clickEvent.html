@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <p>Welcome to my Website</p>
+    </nav>
+    <div class="block">
+        <h4 id="name-block">Hey There, my name is <span id="username">Shubham Pandey</span></h4>
+        <p>There is code for you</p>
+        <pre><code>console.log , is </code></pre>
+    </div>
+
+    <div id="my-container"></div>
+
+    <button id="clickButton">Click Me</button>
+
+    <script>
+        const clickBtn = document.getElementById("clickButton");
+        const container = document.getElementById("my-container");
+
+        // clickBtn.addEventListener("click", () => {
+        //     const el = document.createElement("h1");
+        //     el.innerText = "Shubham Pandey";
+        //     container.appendChild(el);
+
+            //
+
+            let count = 1;
+
+            clickBtn.addEventListener("click", () => {
+            const el = document.createElement("li");
+            el.innerText = count;
+            container.appendChild(el);
+            count++;
+
+
+            
+        })
+
+    </script>
+</body>
+</html>
